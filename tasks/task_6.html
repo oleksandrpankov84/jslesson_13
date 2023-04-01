@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ 13</title>
+</head>
+<body>
+	<header>
+		<a href="../index.html">На головну</a>
+	</header>
+<main>
+	<p>Задача 6. Через 20 секунд перейти на сайт ukr.net. Для цього через 20 секунд після відкриття треба виконати команду: <br>window.location.href = 'https://www.ukr.net/'</p>
+	<h2>Розвʼязок:</h2>
+	<script>
+		function getLocation() {
+			return window.location.href = 'https://www.ukr.net'
+		}
+		let dely =setTimeout(getLocation,20000)
+	</script>
+</main>
+</body>
+</html>

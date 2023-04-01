@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ 13</title>
+</head>
+<body>
+	<header>
+		<a href="../index.html">На головну</a>
+	</header>
+	<main>
+		<p>Задача 5. Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і робиться перевірка.</p>
+		<h2>Розвʼязок:</h2>
+		<script>
+			function getRandom(min,max) {
+				return Math.floor(Math.random()*(max-min+1))+min
+			}
+			function getCheckSum(minNum,maxNum) {
+				setInterval(() => {
+					let randonNum_1=getRandom(minNum,maxNum)
+					let randonNum_2=getRandom(minNum,maxNum)
+					let sum=randonNum_1+randonNum_2
+					let userSum=parseInt(prompt(`введіть суму ${randonNum_1}+${randonNum_2}=`))
+					userSum===sum ? alert('Вірно') : alert('Не вірно')
+				}, 10000);
+			}
+			getCheckSum(1,50)
+		</script>
+	</main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ 13</title>
+</head>
+<body>
+	<header>
+		<a href="../index.html">На головну</a>
+	</header>
+	<main>
+		<p>Нехай х0=х1=1, хі=х(і-1)+2*х(і-2), де i=1,2,... . Визначити xn (x10). Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів</p>
+		<h2>Розв"язок</h2>
+		<script>
+			// рекурсивний алгоритм
+			function getRecursiv(n) {
+				if (n<=1) return 1
+				return getRecursiv(n-1)+2*getRecursiv(n-2)
+			}
+			const recursiveAlg=getRecursiv(10)
+			document.write(`Розвʼязок за рекурсивним алгоритмом Хn=${recursiveAlg}<br>`)
+			// без використання рекурсиву
+
+			function getWithoutRecursiv(n) {
+				if (n===0 || n===1) return 1
+					else{
+						let x_1=x_2=1
+						let x_n
+						for (let i = 2; i <= n; i++) {
+							x_n=(x_1)+2*(x_2)
+							x_2=x_1
+							x_1=x_n
+						}
+						return x_n
+					}
+			}
+			const withoutRecursive=getWithoutRecursiv(10)
+			document.write(`Розвʼязок без використання рекурсивного алгоритму Хn=${withoutRecursive}`)
+
+
+
+		</script>
+</body>
+</html>

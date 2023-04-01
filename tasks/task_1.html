@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ 13</title>
+</head>
+<body>
+	<header>
+		<a href="../index.html">На головну</a>
+	</header>
+	<main>
+		<p>Задача 1. Нехай x0=1, xi=x(i-1)+2i , де i=1,2,... . Визначити x10 . Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів</p>
+		<h2>Розв"язок</h2>
+		<script>
+			//рекурсивний алгоритм
+			function getRecursive(i) {
+				if (i===0) return 1
+				return getRecursive(i-1)+2*i
+			}
+			const recursiveAlg=getRecursive(10)
+			document.write(`З використанням рекурсивного алгоритму х10=${recursiveAlg}<br>`)
+			// без використання рекурсії
+			function getWithoutRecursin(i) {
+				let res=1
+				for (let j = 1; j <=i; j++){
+					res+=2*j
+				}
+				return res
+			}
+			const withoutRecursive=getWithoutRecursin(10)
+			document.write(`Розвʼязок без використання рекурсивних алгоритмів х10=${withoutRecursive}`)
+		</script>
+	</main>
+</body>
+</html>
